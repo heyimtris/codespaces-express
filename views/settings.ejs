@@ -1,0 +1,240 @@
+<html>
+  <head>
+    <link rel="icon" type="image/png" href="/icon" />
+    <title>Eclipse - Settings</title>
+
+    <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+html {
+  background: #000;
+  margin:0;
+}
+
+body {
+  margin:0;
+  padding:0;
+  color:#fff;
+  display:Flex;
+  flex-direction:column;
+  text-align:center;
+  width: 100vw;
+  max-height:100vh;
+}
+
+button {
+  font-family: "Inter";
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: "Archivo";
+  letter-spacing: -1.333px;
+}
+
+p, span, div {
+    font-family: "Inter";
+}
+
+nav {
+  display: flex;
+padding: 40px;
+align-items: center;
+gap: 100px;
+}
+
+.logo, .logo > img {
+  width:32px;
+}
+
+.buttons {
+  display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-end;
+gap: 9px;
+flex: 1 0 0;
+}
+
+button {
+  font-family: Inter;
+font-size: 15.2px;
+font-style: normal;
+font-weight: 400; /* 100% */display: flex;
+padding: 12.72px 24.96px;
+justify-content: center;
+align-items: center;
+gap: 6.48px;
+border-radius:11.88px;
+  border:none;
+}
+
+.primary {
+    background: #B439FF;
+  color:#000;
+}
+
+.primary-text {
+  color:#B439FF;
+}
+
+.secondary {
+  background: rgba(180, 57, 255, 0.20);
+  color: #B439FF;
+}
+
+button:hover {
+  opacity:0.8;
+  cursor:pointer;
+}
+
+      .setting {
+        display:flex;
+        gap:10px;
+        margin:0;
+        width:100%;
+      }
+      .setting > .info {
+        display:flex;
+        flex-direction:column;
+        gap:2px;
+      }
+  .setting > .info > * {
+    font-family: Inter;
+
+    margin:0;
+      text-align:left;
+  }
+
+      .setting > .info > p {
+        font-family:Inter;
+      }
+
+.text {
+  padding-left:35px;
+  
+  display:flex;
+  flex-direction:column;
+  align-items:start;
+  justify-content:Center;
+  gap:20px;
+}
+
+.text > span > * {
+  margin:0;
+font-style: normal;
+    letter-spacing:-3px;
+
+font-weight: 700;
+line-height: 80%; /* 83.333px */
+}
+
+.text > span {
+  font-size:33px;
+  margin:0;
+
+  display:Flex;
+  widht:100%;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+}
+
+.text > p {
+  color: #80758E;
+
+text-align: center;
+font-family: Inter;
+font-size: 20px;
+font-style: normal;
+font-weight: 500;
+  letter-spacing:-1.111px;
+line-height: 100%; /* 80px */
+}
+
+.button-list {
+  display:flex;
+  gap:30px;
+
+}
+
+#change {
+    opacity: 1;
+  transition: opacity 1000ms;
+}
+
+#change.hide {
+  opacity:0;
+}
+    </style>
+  </head>
+  <body>
+<nav>
+       <button class="secondary" onclick="window.location.assign('/app')">Back</button>
+  
+    <div class="buttons">
+      <div class="logo">
+      <img src="https://i.ibb.co/wsn61xs/image.png">
+      </div>
+    </div>
+  </nav>
+  <div class="text">
+    <span><h1>Settings</h1></span>
+    <p>A "configuration manager page" that'll improve your Eclipse experience!</p>
+    <div class="setting">
+      <div class="info">
+  <h2>Dark Mode</h2>
+    <p>Embrace the dark side-- Let it consume you!</p>
+      </div>
+      <div class="action">
+      <input type="checkbox" id="lightdark" onchange="toggleDarkMode(this)">
+      </div>
+    </div>
+  </div>
+    <script>
+
+        function getCookie(cname) {
+          let name = cname + "=";
+          let decodedCookie = decodeURIComponent(document.cookie);
+          let ca = decodedCookie.split(';');
+          for(let i = 0; i <ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') {
+              c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+              return c.substring(name.length, c.length);
+            }
+          }
+          return "";
+
+        }
+
+        function setCookie(cname, cvalue, exdays) {
+          const d = new Date();
+          d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+          let expires = "expires="+d.toUTCString();
+          document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+      const dark = getCookie('dark')
+      if (!dark) setCookie('dark','false',365)
+      const checkboxDarkLight = document.querySelector('#lightdark')
+      if (dark == "true") {
+        checkboxDarkLight.checked = true
+      } else {
+        checkboxDarkLight.checked = false
+
+      }
+
+      function toggleDarkMode(input) {
+        if (input.checked) {
+          setCookie('dark','true',365)
+        } else {
+          setCookie('dark','false',365)
+        }
+      }
+    </script>
+  </body>
+</html>

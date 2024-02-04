@@ -1,0 +1,1478 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="icon" type="image/png" href="/icon" />
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+
+  <title>Eclipse</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<style>
+  
+  
+  body, html {
+    overflow-y:hidden; 
+  }
+  
+  .banner {
+    font-family:Inter;
+  }
+
+  
+  *,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+  
+  .msg-box {
+    margin-top:20px;
+  }
+
+.sidebar > .contacts {
+overflow-y:scroll;    
+  }
+
+
+.msg-list {
+  display: flex;
+width: 100%;
+  max-height:100%;
+flex:1;
+  flex-shrink:0;
+  overflow-y:scroll;
+flex-direction: column;
+align-items: center;
+gap: 20px;
+flex-shrink: 0;
+}
+
+.incoming {
+  display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 10px;
+align-self: stretch;
+}
+
+.outgoing {
+  display: flex;
+flex-direction: column;
+align-items: flex-end;
+gap: 10px;
+align-self: stretch;
+}
+
+.incoming > .bubble {
+  font-family:Inter;
+display: flex;
+padding: 18px;
+flex-direction: column;
+align-items: flex-start;
+gap: 10px;
+border-radius: 20px 20px 20px 0px;
+background: #EFEFEF;
+  
+  color: #424242;
+font-family: Inter;
+font-size: 15px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.outgoing > .bubble {
+  display: flex;
+padding: 18px;
+flex-direction: column;
+align-items: flex-start;
+gap: 10px;
+  
+border-radius: 20px 20px 0px 20px;
+background: rgba(181, 96, 246, 0.10);
+  
+   color: #424242;
+font-family: Inter;
+font-size: 15px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+
+i {
+  font-family: "Material Symbols Outlined";
+  font-style:normal;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24;
+  font-size:16px;
+}
+  
+
+.contact:hover {
+  cursor:pointer;
+  opacity:0.75;
+}
+
+#typing {
+  display:none;
+}
+
+  .bubble {
+    font-family: Inter;
+  }
+
+  .bubble > img, .bubble > iframe, .bubble > video {
+  width:25%;
+  }
+
+  .bubble > script, .bubble > button {
+    display:none;
+  }
+
+  .bubble > script:after, .bubble > button:after {
+  content: "Removed due to exploitation"
+  }
+
+.row .fullw {
+    background:none;
+  outline:none;
+  border:none;
+  width:100%;
+}
+
+
+.replying > button {
+  border:0;
+  background:none;
+  
+}
+
+.msg-input:has(span) {
+  flex-direction: column;
+}
+
+.msg-input:has(span) > span {
+   width:100%;
+  
+  padding:10px;
+}
+
+.repl > .c > p {
+  margin:0;
+}
+
+.incoming > .bubble > span {
+  width:100%;
+  padding:15px;
+   background:#DBDBDB;
+color: #505050;
+}
+
+.repl {
+  font-family:Inter;
+  font-size:12px;
+  border-radius:9.75px;
+  display:flex;
+  flex-direction:row;
+}
+
+.repl > .c {
+  
+  gap:5px;
+  display:flex;
+   flex-direction:column;
+}
+
+.repl > .c > .content {
+  font-size:16px;
+}
+
+.repl > .c {
+  width:75%;
+}
+
+
+.repl >  button {
+  background:none;
+  border:0;
+  width:25%;
+  text-align:right;
+}
+
+.msg-input > input::placeholder, .replying > input::placeholder {
+  color:#9f9f9f;
+  font-family:Inter;
+}
+
+.bubble:has(.actions) {
+  display:flex;
+  flex-direction:row;
+  gap:5px;
+}
+
+.actions {
+  display:flex;
+  flex-direction:row;
+}
+
+.actions > button {
+  background:none;
+  border:0;
+}
+  
+  body {
+  background: #F2E4FB;
+  display: flex;
+width: 100vw;
+height: 100vh;
+flex-direction: column;
+}
+
+
+i {
+  font-family: "Material Symbols Rounded";
+  font-style:normal;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 600,
+  'GRAD' 0,
+  'opsz' 24;
+}
+  
+  .banner {
+    border-radius: 0px;
+background: rgba(180, 57, 255, 0.20);
+    display: flex;
+padding: 18px 24px;
+justify-content: space-between;
+align-items: center;
+align-self: stretch;
+
+    
+    color: #B439FF;
+font-family: Inter;
+font-size: 15px;
+font-style: normal;
+font-weight: 500;
+line-height: 24px; /* 100% */
+  }
+  
+  #closing:hover {
+    cursor:pointer;
+  }
+   
+  @media only screen and (max-width:1000px) {
+    #bannerIcon {
+      display:none;
+    }
+  }
+  
+  .app {
+    display: flex;
+align-items: center;
+    width:100%;
+    height:100%;
+flex: 1 0 0;
+align-self: stretch;
+  }
+  
+  .sidebar {
+    border-radius: 24px;
+background: #FFF;
+    display: flex;
+width: 30%;
+   height:100%;
+min-width: 300px;
+max-width: 100vw;
+padding: 20px;
+flex-direction: column;
+align-items: flex-start;
+gap: 24px;
+align-self: stretch;
+  }
+  
+  .messages {
+    display: flex;
+min-width: 380px;
+    width:70%;
+padding: 20px;
+flex-direction: column;
+align-items: flex-start;
+gap: 0px;
+    
+    margin:0;
+align-self: stretch;
+    border-radius: 24px;
+background: #FFF;
+  }
+  
+  .user-info {
+    display: flex;
+justify-content: center;
+align-items: center;
+gap: 24px;
+align-self: stretch;
+  }
+  
+  .user {
+    display: flex;
+align-items: center;
+gap: 15px;
+flex: 1 0 0;
+  }
+  
+  
+  .button {
+    display: flex;
+padding: 9px 12px;
+justify-content: center;
+align-items: center;
+    
+gap: 8.96px;
+    border:0;
+    border-radius: 15px;
+font-family: Inter;
+    text-align:center;
+font-size: 12px;
+font-style: normal;
+font-weight: 500;
+  }
+  
+  .blue {
+    color:#787DEA;
+background: rgba(120, 125, 234, 0.20);
+  }
+  
+  .orange {
+    color: #FF5F1B;
+     background: rgba(255, 95, 27, 0.20);
+  }
+  
+  .purple {
+    background: rgba(180, 57, 255, 0.20);
+    color: #B439FF;
+  }
+  
+  .button:hover {
+    cursor:pointer;
+    backdrop-filter:brightness(0.90);
+  }
+  
+  .button > i {
+  font-family: "Material Symbols Rounded";
+  font-style:normal;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24;
+}
+  
+  .user > img {
+    border-radius: 7.5px;
+background: rgba(120, 125, 234, 0.20);
+    width: 42px;
+height: 42px;
+  }
+  
+  .user > h1 {
+    flex: 1 0 0;
+    color: #000;
+font-family: Inter;
+font-size: 20px;
+font-style: normal;
+font-weight: 580;
+line-height: 20px; /* 100% */
+  }
+  
+  .button-list {
+    display: flex;
+justify-content: start;
+align-items: flex-start;
+gap: 12px;
+align-self: stretch;
+  }
+  
+  .contacts {
+    display: flex;
+padding: 24px 0px 24px 24px;
+flex-direction: column;
+justify-content: flex-end;
+align-items: flex-end;
+gap: 12px;
+align-self: stretch;
+    border-radius: 22px;
+border: 2px solid rgba(120, 125, 234, 0.20);
+  }
+  
+  .contact {
+    display: flex;
+align-items: center;
+    align-self:stretch;
+gap: 16px;
+  }
+  
+  .contact > img {
+    border-radius: 5px;
+background: rgba(120, 125, 234, 0.20);
+    width: 32px;
+height: 32px;
+  }
+  
+  .contact-info {
+    display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+gap: 6px;
+flex: 1 0 0;
+  }
+  
+  .contact-info > * {
+    margin:0;
+  }
+  
+  .contact-info > h1 {
+    align-self: stretch;
+    color: #000;
+font-family: Inter;
+font-size: 15px;
+font-style: normal;
+font-weight: 500;
+line-height: 12px; /* 100% */
+  }
+  
+  .contact-info > p {
+    color: rgba(120, 125, 234, 0.80);
+font-family: Inter;
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: 8px; /* 100% */
+    align-self:stretch;
+  }
+ 
+  
+  .hr {
+    width: 324px;
+height: 0px;
+    stroke-width: 2px;
+stroke: rgba(120, 125, 234, 0.20);
+  }
+  
+  .msg-box >input {
+    border-radius: 22px;
+border: 2px solid rgba(120, 125, 234, 0.20);
+    display: flex;
+padding: 10px 12px;
+align-items: center;
+gap: 12px;
+flex: 1 0 0;
+    color: rgba(120, 125, 234, 0.40);
+font-family: Inter;
+font-size: 12px;
+font-style: normal;
+font-weight: 500;
+line-height: 12px; /* 100% */
+  }
+  
+  .msg-box > input::placeholder {
+     color: rgba(120, 125, 234, 0.40);
+font-family: Inter;
+font-size: 12px;
+font-style: normal;
+font-weight: 500;
+line-height: 12px; /* 100% */
+  }
+  
+  .msg-box > input:focus {
+    outline:none;
+  }
+  
+  .msg-box {
+    display: flex;
+width: 100%;
+align-items: flex-start;
+gap: 12px;
+  }
+  
+  .row {
+    display:flex;
+    flex-direction:row;
+    gap:20px;
+  }
+  
+  @media only screen and (min-width:781px) {
+    .back {
+      display:none;
+    }
+  }
+  
+  @media only screen and (max-width:780px) {
+    .sidebar {
+      display:none;
+    }
+    .messages {
+      width:100%;
+      min-width:250px;
+    }
+    
+    .msg-box {
+      width:100%;
+      min-width:250px;
+    }
+    
+    .incoming > .bubble, .outgoing > .bubble {
+      padding:14px;
+      
+    }
+    
+    .messages > * {
+      margin-top:10px;
+    }
+    
+    body,html {
+      overflow:hidden;
+    }
+    
+    .app {
+      justify-content:center;
+      align-items:center;
+    }
+  }
+  .banner {
+    font-family:Inter;
+  }
+  
+  *,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+.messages > * {
+  margin:10px;
+}
+
+.msg-list {
+  display: flex;
+width: 100%;
+  max-height:100%;
+flex:1;
+  flex-shrink:0;
+  overflow-y:scroll;
+flex-direction: column;
+align-items: center;
+gap: 20px;
+flex-shrink: 0;
+}
+
+.incoming {
+  display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 10px;
+align-self: stretch;
+}
+
+.outgoing {
+  display: flex;
+flex-direction: column;
+align-items: flex-end;
+gap: 10px;
+align-self: stretch;
+}
+
+.incoming > .bubble {
+  font-family:Inter;
+display: flex;
+padding: 18px;
+flex-direction: column;
+align-items: flex-start;
+gap: 10px;
+border-radius: 20px 20px 20px 0px;
+background: #EFEFEF;
+  
+  color: #424242;
+font-family: Inter;
+font-size: 15px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.outgoing > .bubble {
+  display: flex;
+padding: 18px;
+flex-direction: column;
+align-items: flex-start;
+gap: 10px;
+  
+border-radius: 20px 20px 0px 20px;
+background: rgba(181, 96, 246, 0.10);
+  
+   color: #424242;
+font-family: Inter;
+font-size: 15px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+
+i {
+  font-family: "Material Symbols Outlined";
+  font-style:normal;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24;
+  font-size:16px;
+}
+
+.contact:hover {
+  cursor:pointer;
+  opacity:0.75;
+}
+
+#typing {
+  display:none;
+}
+
+  .bubble {
+    font-family: Inter;
+  }
+
+  .bubble > img, .bubble > iframe, .bubble > video {
+  width:25%;
+  }
+
+  .bubble > script, .bubble > button {
+    display:none;
+  }
+
+  .bubble > script:after, .bubble > button:after {
+  content: "Removed due to exploitation"
+  }
+
+.row .fullw {
+    background:none;
+  outline:none;
+  border:none;
+  width:100%;
+}
+
+
+.replying > button {
+  border:0;
+  background:none;
+  
+}
+
+.msg-input:has(span) {
+  flex-direction: column;
+}
+
+.msg-input:has(span) > span {
+   width:100%;
+  
+  padding:10px;
+}
+
+.repl > .c > p {
+  margin:0;
+}
+
+.incoming > .bubble > span {
+  width:100%;
+  padding:15px;
+   background:#DBDBDB;
+color: #505050;
+}
+
+.repl {
+  font-family:Inter;
+  font-size:12px;
+  border-radius:9.75px;
+  display:flex;
+  flex-direction:row;
+}
+
+.repl > .c {
+  
+  gap:5px;
+  display:flex;
+   flex-direction:column;
+}
+
+.repl > .c > .content {
+  font-size:16px;
+}
+
+.repl > .c {
+  width:75%;
+}
+
+
+.repl >  button {
+  background:none;
+  border:0;
+  width:25%;
+  text-align:right;
+}
+
+.msg-input > input::placeholder, .replying > input::placeholder {
+  color:#9f9f9f;
+  font-family:Inter;
+}
+
+.bubble:has(.actions) {
+  display:flex;
+  flex-direction:row;
+  gap:5px;
+}
+
+.actions {
+  display:flex;
+  flex-direction:row;
+}
+
+.actions > button {
+  background:none;
+  border:0;
+}
+  
+  body {
+  background: #F2E4FB;
+  display: flex;
+width: 100vw;
+height: 100vh;
+flex-direction: column;
+align-items: center;
+    margin:0;
+    padding:0;
+}
+
+
+i {
+  font-family: "Material Symbols Rounded";
+  font-style:normal;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 600,
+  'GRAD' 0,
+  'opsz' 24;
+}
+  
+  .banner {
+    border-radius: 0px;
+background: rgba(180, 57, 255, 0.20);
+    display: flex;
+padding: 18px 24px;
+justify-content: space-between;
+align-items: center;
+align-self: stretch;
+    width:100%;
+    height:auto;
+    min-height:40px;
+
+    
+    color: #B439FF;
+font-family: Inter;
+font-size: 15px;
+font-style: normal;
+font-weight: 500;
+line-height: 24px; /* 100% */
+  }
+  
+  #closing:hover {
+    cursor:pointer;
+  }
+   
+  @media only screen and (max-width:1000px) {
+    #bannerIcon {
+      display:none;
+    }
+  }
+  
+  .app {
+    display: flex;
+align-items: center;
+   width:100%;
+    height:100%;
+  gap:0;
+align-self: stretch;
+  }
+  
+  .sidebar {
+    border-radius: 0px;
+background: #FFF;
+    display: flex;
+width: 30%;
+ flex-grow:1;
+    flex-shrink:1;
+padding: 20px;
+flex-direction: column;
+align-items: flex-start;
+gap: 24px;
+align-self: stretch;
+    border-right: 1px solid rgba(120, 125, 234, 0.20);
+  }
+  
+  .messages {
+    display: flex;
+min-width: 380px;
+    flex-grow:1;
+    flex-shrink:1;
+    height:100%;
+    width:100%;
+padding: 20px;
+flex-direction: column;
+align-items: flex-start;
+gap: 0px;
+    
+    margin:0;
+align-self: stretch;
+    border-radius: 0px;
+background: #FFF;
+  }
+  
+  .user-info {
+    display: flex;
+justify-content: center;
+align-items: center;
+gap: 24px;
+align-self: stretch;
+  }
+  
+  .user {
+    display: flex;
+align-items: center;
+gap: 15px;
+flex: 1 0 0;
+  }
+  
+  .button {
+    display: flex;
+padding: 9px 12px;
+justify-content: center;
+align-items: center;
+gap: 8.96px;
+    border:0;
+    border-radius: 15px;
+font-family: Inter;
+    text-align:center;
+font-size: 12px;
+font-style: normal;
+font-weight: 500;
+  }
+  
+  .blue {
+    color:#787DEA;
+background: rgba(120, 125, 234, 0.20);
+  }
+  
+  .orange {
+    color: #FF5F1B;
+     background: rgba(255, 95, 27, 0.20);
+  }
+  
+  .purple {
+    background: rgba(180, 57, 255, 0.20);
+    color: #B439FF;
+  }
+  
+  .button:hover {
+    cursor:pointer;
+    backdrop-filter:brightness(0.90);
+  }
+  
+  .button > i {
+  font-family: "Material Symbols Rounded";
+  font-style:normal;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24;
+}
+  
+  .user > img {
+    border-radius: 7.5px;
+background: rgba(120, 125, 234, 0.20);
+    width: 42px;
+height: 42px;
+  }
+  
+  .user > h1 {
+    flex: 1 0 0;
+    color: #000;
+font-family: Inter;
+font-size: 20px;
+font-style: normal;
+font-weight: 580;
+line-height: 20px; /* 100% */
+  }
+  
+  .button-list {
+    display: flex;
+justify-content: start;
+align-items: flex-start;
+gap: 12px;
+align-self: stretch;
+  }
+  
+  .contacts {
+    display: flex;
+padding: 24px 0px 24px 24px;
+flex-direction: column;.
+justify-content: flex-end;
+align-items: flex-end;
+gap: 12px;
+align-self: stretch;
+    border-radius: 22px;
+border: 2px solid rgba(120, 125, 234, 0.20);
+  }
+  
+  .contact {
+    display: flex;
+align-items: center;
+    align-self:stretch;
+gap: 16px;
+  }
+  
+  .contact > img {
+    border-radius: 5px;
+background: rgba(120, 125, 234, 0.20);
+    width: 32px;
+height: 32px;
+  }
+  
+  .contact-info {
+    display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+gap: 6px;
+flex: 1 0 0;
+  }
+  
+  .contact-info > * {
+    margin:0;
+  }
+  
+  .contact-info > h1 {
+    align-self: stretch;
+    color: #000;
+font-family: Inter;
+font-size: 15px;
+font-style: normal;
+font-weight: 500;
+line-height: 12px; /* 100% */
+  }
+  
+  .contact-info > p {
+    color: rgba(120, 125, 234, 0.80);
+font-family: Inter;
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: 8px; /* 100% */
+    align-self:stretch;
+  }
+  
+  .hr {
+    width: 324px;
+height: 0px;
+    stroke-width: 2px;
+stroke: rgba(120, 125, 234, 0.20);
+  }
+  
+  .msg-box >input {
+    border-radius: 22px;
+border: 2px solid rgba(120, 125, 234, 0.20);
+    display: flex;
+padding: 10px 12px;
+align-items: center;
+gap: 12px;
+flex: 1 0 0;
+    color: rgba(120, 125, 234, 0.40);
+font-family: Inter;
+font-size: 12px;
+font-style: normal;
+font-weight: 500;
+line-height: 12px; /* 100% */
+  }
+  
+  .msg-box > input::placeholder {
+     color: rgba(120, 125, 234, 0.40);
+font-family: Inter;
+font-size: 12px;
+font-style: normal;
+font-weight: 500;
+line-height: 12px; /* 100% */
+  }
+  
+  .msg-box > input:focus {
+    outline:none;
+  }
+  
+  .msg-box {
+    display: flex;
+width: 100%;
+align-items: flex-start;
+gap: 12px;
+  }
+
+
+    .contacts {
+       overflow-y:scroll;
+        height:100%;
+        justify-content:start;
+    }
+
+
+
+    .reply-bar {
+      display:flex;
+      flex-direction:row;
+      gap:5px;
+      justify-content:center;
+      align-items:start;
+      text-align:left;
+      width:100%;
+      height:40px;
+      color:#787DEA;
+  background: rgba(120, 125, 234, 0.20);
+      padding:12px;
+      border-radius:12px;
+      flex-wrap:none;
+      text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+    }
+
+    .reply-bar:hover {
+      cursor:pointer;
+      filter: brightness(0.80);
+    }
+
+    .reply-bar > * {
+      justify-content:center;
+      align-items:flex-start;
+      text-align:left;
+    }
+
+
+    @media only screen and (max-width:850px) {
+      .sidebar {
+          border-radius: 0px;
+  background: #FFF;
+      display: flex;
+  width: 100px;
+     height:100%;
+  min-width: 100px;
+  max-width: 100px;
+  padding: 20px;
+  flex-direction: column;
+  align-items:start;
+  gap: 24px;
+  align-self: stretch;
+      }
+
+
+      .contacts {
+        display:flex;
+        overflow-y:scroll;
+        height:100%;
+        justify-content:start;
+              align-items:center;
+        max-width:80px;
+        padding:15px 15px;
+        margin:0;
+
+      }
+
+      .contacts > .contact {
+        padding:0;
+        margin:0;
+      }
+
+      .messages {
+        width:100%;
+      }
+
+      .sidebar > .user-info > .user {
+        display:none;
+      }
+
+      .sidebar > .button-list {
+        flex-direction:column;
+        align-items:center;
+      }
+
+      .sidebar > .button-list > button.purple > i {
+        display:none;
+      }
+
+      .sidebar > .button-list > button.orange > i {
+        display:none;
+      }
+
+      .sidebar > .button-list > button.orange > {
+        width:min-content;
+        height:auto;
+      }
+
+      .sidebar > .button-list > button.purple > p {
+        display:flex;
+        margin:0;
+      } 
+
+      .sidebar > .contacts > .contact > .contact-info {
+        display:none;
+      }
+
+      .reply-bar {
+         display:block;
+      }
+    }
+
+
+       .modal {
+         width: 90%;
+         height: 90%;
+         background: #efefff;
+         border: 0.5px solid #fff;
+         padding: 20px;
+         gap: 10px;
+         border-radius: 24px;
+         display: flex;
+         justify-content: start;
+         flex-direction: column;
+         align-items: start;
+         z-index:999;
+      }
+       .modal-cont {
+         z-index:99999;
+         width: 100vw;
+         height: 100vh;
+         position: fixed;
+         top: 0;
+         left: 0;
+         justify-content: Center;
+         align-items: center;
+         display: none;
+      }
+       .modal > iframe {
+         width: 100%;
+         height: 100%;
+         border-radius: 24px;
+         border: none;
+         padding:none;
+         margin:0;
+        user-select: none;
+         background: none;
+      }
+
+  body.dark {
+     background-color: #000;
+  }
+   body.dark .app {
+     background-color: #000;
+  }
+   body.dark .app > .sidebar, body.dark .app, body.dark .messages {
+     background-color: #240b33;
+     color: #fff;
+  }
+   body.dark .bubble > * {
+     color: #fff;
+  }
+   body.dark .outgoing > * {
+     background-color: #b439ff;
+  }
+   body.dark .incoming > * {
+     color: #000;
+  }
+   body.dark .user > h1 {
+     color: #fff;
+  }
+   body.dark .contact-info > * {
+     color: #fff;
+  }
+   body.dark #msgg {
+     background: none;
+     border-color: #b439ff;
+     border-width: 1px;
+     color: white;
+  }
+
+   
+  
+  </style>
+</head>
+  <body>
+    <div class="app">
+      <div class="sidebar">
+        <div class="user-info">
+          <div class="user">
+            <img src="<%= me.avatar %>">
+            <h1><%= me.nickname %></h1>
+          </div>
+          <button class="button blue" onclick="window.location.assign('/settings')"><i>settings</i></button>
+        </div>
+        <div class="button-list">
+       <button class="button purple" onclick="addUserPrompt()" style="width:100%;"><i>add</i> Add</button>
+          <button class="button blue" onclick="addUserPrompt()" ><i style="font-style:normal;">search</i></button>
+        </div>
+
+          <div class="contacts">
+            <% const filteredContacts = me.contacts.sort((a, b) => { let aContMsg; let bContMsg; try { aContMsg = messages[Array(me.username, a.username).sort().join('_')]; bContMsg = messages[Array(me.username, b.username).sort().join('_')]; return aContMsg[aContMsg.length - 1].timestamp > bContMsg[bContMsg.length - 1].timestamp } catch(err) { if (!aContMsg) { return -1 } else { if (!bContMsg) { return 1 } else { return 0} } } }).reverse() %>
+            <% filteredContacts.forEach(contact => { %>
+              <% console.log(contact) %>
+              <div class="contact" onclick="window.location.assign('/messages/<%= contact.username %>');">
+                <img src="<%= contact.avatar ? contact.avatar : 'Unknown' %>">
+                <div class="contact-info">
+                  <h1><%= contact.username ? contact.username : Unknown %></h1>
+                  <p><% contactMsgs = messages[Array(me.username, contact.username).sort().join('_')] %>
+                <% if (contactMsgs) { %>
+                  <% if (contactMsgs.length < 1) { %>
+ No messages in here, but you can change that!
+  <% } else { %>
+<% if(contactMsgs[contactMsgs.length - 1].username == me.username) { %>
+ You: <%= contactMsgs[contactMsgs.length - 1].content %>
+<% } else { %>
+  <%= contactMsgs[contactMsgs.length - 1].content %>
+<% } %> 
+  <% } %>
+  <% } %></p>
+                </div>
+              </div>
+              <div class="hhr"></div>
+              <% }); %>
+          </div>
+      </div>
+      <div class="messages">
+        <div class="row">
+                    <button class="button back blue"><i>arrow_back</i></button>
+
+        <div class="contact" onclick="window.location.assign('/users/<%= user.username %>');">
+          <img src="<%= user.avatar %>">
+          <div class="contact-info">
+       <h1><%= user.username %></h1>
+            <p><%= getStatus(user.username) %></p>
+          </div>
+        </div>
+        </div>
+          <div class="msg-list">
+            <% contactMsgs = messages[Array(me.username, user.username).sort().join('_')] %>
+            <% for (msg in contactMsgs) { %>
+              <% if (msg.username == me.username) { %>
+                 <div class="outgoing">
+                 <div class="bubble" onmouseover="this.innerHTML = '${msg.unhashedMessage ? msg.unhashedMessage : msg.content }' + ' (${formatDate(new Date(msg.timestamp))}) '" onmouseout="this.innerHTML = '${msg.unhashedMessage ? msg.unhashedMessage : msg.content}'">
+                   <div class="content">${ msg.unhashedMessage ? msg.unhashedMessage : msg.content }</div>
+
+                 </div>
+                <% } else { %>
+                  <div class="outgoing">
+                   <div class="bubble" onmouseover="this.innerHTML = '${msg.unhashedMessage ? msg.unhashedMessage : msg.content }' + ' (${formatDate(new Date(msg.timestamp))}) '" onmouseout="this.innerHTML = '${msg.unhashedMessage ? msg.unhashedMessage : msg.content}'">
+                     <div class="content">${ msg.unhashedMessage ? msg.unhashedMessage : msg.content }</div>
+
+                   </div>
+                    <% } %>
+            <% }     %>
+          </div>
+          <form class="msg-box">
+            <a class="button blue" onclick="#"><i>add</i></a>
+            <input type="text" placeholder="Message <%= user.username %>..." id="msgg" style="color:#000;">
+            <button class="button purple"><i>send</i></button>
+            </form>
+         
+      </div>
+    </div>
+             
+              <script>
+
+                  function getCookie(cname) {
+                    let name = cname + "=";
+                    let decodedCookie = decodeURIComponent(document.cookie);
+                    let ca = decodedCookie.split(';');
+                    for(let i = 0; i <ca.length; i++) {
+                      let c = ca[i];
+                      while (c.charAt(0) == ' ') {
+                        c = c.substring(1);
+                      }
+                      if (c.indexOf(name) == 0) {
+                        return c.substring(name.length, c.length);
+                      }
+                    }
+                    return "";
+
+                  }
+
+                  function setCookie(cname, cvalue, exdays) {
+                    const d = new Date();
+                    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+                    let expires = "expires="+d.toUTCString();
+                    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+                  }
+
+
+                const dark = getCookie('dark')
+                  if (!dark) setCookie('dark','false',365)
+                  if (dark == "true") {
+                    document.body.classList.add('dark')
+                  } else if (dark == "false") {
+                    document.body.classList.remove('dark')
+                  }
+                
+function addUser(me, user) {
+  console.log(user + 'hi')
+  fetch('/user/' + me + '/addContact/' + user).then(res => res.json()).then(response => {
+    if (response.error) {
+      alert('something wen\'t wrong. try again later.')
+    } else {
+      window.location.assign('/messages/' + user)
+    }
+  }) 
+}
+
+  const form = document.querySelector('.msg-box')
+  form.addEventListener('submit', function(e){
+    e.preventDefault()
+    const input = document.getElementById('msgg')
+    console.log(input)
+   if (input.value.trim() == "") return;
+     const messageID = new Array('<%= me.username %>', '<%= user.username %>').sort().join("_")
+    const msg = {
+     username: '<%= me.username %>',
+     avatar: '<%= me.avatar %>',
+      timestamp: Date.now(),
+     content: input.value.trim()
+    }
+  fetch('/messages/' + messageID + '/send', {
+  method: "POST",
+  headers: {
+    "Content-Type": 'application/json',
+    "Accept": "application/json"
+  },
+  body: JSON.stringify(msg)
+  })
+    input.value = ""
+  })
+
+  window.scrollTo(0,0);
+
+  
+ const scrollToBottom = (id) => {
+    const element = document.querySelector(id);
+    element.scrollTop = element.scrollHeight;
+}
+
+    scrollToBottom('.msg-list')
+    
+    
+
+    let oldMsgs;
+  
+  let i = 0;
+  setInterval(function(){
+    const messageID = new Array('<%= me.username %>', '<%= user.username %>').sort().join("_")
+  fetch('/getMessages/' + messageID).then(res => res.json()).then(msgs => {
+    
+    if (!oldMsgs) {
+    oldMsgs = [];
+    }
+console.log(oldMsgs.length)
+    console.log(msgs.length)
+    if (!oldMsgs.length == 0) {
+                if (!msgs.length > oldMsgs.length || msgs.length == oldMsgs.length) return;
+    }
+              
+      const messagesDiv = document.querySelector('.msg-list')
+      messagesDiv.innerHTML = ""
+   
+    var i=0;
+      <% i = 0 %>
+                                                                  const newMsgs = msgs.slice(0, oldMsgs.length + 1).reverse()
+                 console.log(newMsgs)                                             
+    for (msg of newMsgs) {
+      if (msg.username == '<%= me.username %>') {
+  const replyInfo = { username: msg.username, content: msg.content }
+        
+ messagesDiv.insertAdjacentHTML(
+   'afterbegin', `
+          <div class="outgoing">
+          <div class="bubble" onmouseover="this.innerHTML = '${msg.unhashedMessage ? msg.unhashedMessage : msg.content }' + ' (${formatDate(new Date(msg.timestamp))}) '" onmouseout="this.innerHTML = '${msg.unhashedMessage ? msg.unhashedMessage : msg.content}'">
+            <div class="content">${ msg.unhashedMessage ? msg.unhashedMessage : msg.content }</div>
+           
+          </div>
+        `)
+      } else {
+       const replyInfo = { username: msg.username, content: msg.content }
+          
+ messagesDiv.insertAdjacentHTML(
+   'afterbegin', `
+       <div class="incoming">
+          <div class="bubble" onmouseover="this.innerHTML = '${msg.unhashedMessage ? msg.unhashedMessage : msg.content }' + ' (${formatDate(new Date(msg.timestamp))}) '" onmouseout="this.innerHTML = '${msg.unhashedMessage ? msg.unhashedMessage : msg.content}'">
+            <div class="content">${ msg.unhashedMessage ? msg.unhashedMessage : msg.content }</div>
+           
+          </div>
+        `)
+    }
+        }
+     scrollToBottom('.msg-list')
+     i += 1
+    <% i += 1 %>
+    
+     oldMsgs = msgs
+    })
+    
+  }, 700)
+
+               function formatDate(date) {
+  let result = null;
+  let now = new Date();
+  let differSec = (now - date) / 1000;
+
+  if (differSec < 1) return result = "right now";
+  if (differSec < 60) return result = `${Math.floor(differSec)} sec. ago`;
+  if (differSec < 3600) return result = `${Math.floor(differSec / 60)} min. ago`;
+  if (differSec >= 3600) {
+    const day = date.toLocaleString(window.navigator.language, {weekday: 'long', month: "long", day: "2-digit"});
+    const nowDay = now.toLocaleString(window.navigator.language, {weekday: 'long', month: "long", day: "2-digit"});
+    if (day === nowDay) {
+      const time = date.toLocaleString(window.navigator.language, {hour: "2-digit", minute: "2-digit"});
+      return result = "Today at " + time
+    } else {
+    return result = date.toLocaleString(window.navigator.language, {weekday: 'long', month: "long", day: "2-digit", hour: "2-digit", minute: "2-digit", day: "2-digit"});
+    }
+  };
+
+  return result;
+}
+
+
+  
+
+function reverseBack(){
+  const form = document.querySelector('.msg-input')
+  form.innerHTML = `
+  <input>
+        <button><i>send</i></button>
+        `
+}
+
+            </script>
+
+          </body></html>
